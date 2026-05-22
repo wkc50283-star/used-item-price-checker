@@ -579,8 +579,13 @@ td {
   }
 }
 
-/* 手機版細節調整 */
+/* 手機版：全部字體放大、輸入區更好點 */
 @media (max-width: 560px) {
+  body {
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
   .container {
     width: min(100% - 22px, 1120px);
   }
@@ -591,69 +596,176 @@ td {
 
   .header-inner {
     min-height: auto;
-    padding: 14px 0;
+    padding: 15px 0;
     align-items: flex-start;
     flex-direction: column;
+    gap: 13px;
   }
 
   .brand {
-    font-size: 0.98rem;
+    font-size: 1.15rem;
+    line-height: 1.4;
   }
 
   .nav-links {
-    gap: 14px;
+    gap: 20px;
+    font-size: 1.1rem;
   }
 
   .lang-switcher {
     width: 100%;
     justify-content: flex-start;
+    gap: 9px;
+  }
+
+  .lang-btn {
+    font-size: 1rem;
+    padding: 8px 13px;
   }
 
   .hero {
-    padding-top: 22px;
+    padding-top: 26px;
   }
 
   .hero-inner {
     max-width: 100%;
   }
 
+  .eyebrow {
+    font-size: 0.95rem;
+  }
+
   h1 {
-    font-size: clamp(1.9rem, 10vw, 3rem);
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  .hero-text {
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+
+  .quick-hint {
+    font-size: 1.12rem;
+    line-height: 1.7;
   }
 
   .checker-section {
-    padding-top: 12px;
+    padding-top: 16px;
   }
 
   .checker-layout {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
 
   .form-card,
   .result-card {
     width: 100%;
-    padding: 16px;
+    padding: 20px;
   }
 
   .result-card {
     position: static;
   }
 
+  .form-block {
+    padding: 17px 0;
+  }
+
+  .form-block h2 {
+    font-size: 1.32rem;
+    margin-bottom: 16px;
+  }
+
+  label {
+    font-size: 1.22rem;
+    margin: 14px 0 8px;
+  }
+
+  input,
+  textarea {
+    font-size: 1.22rem;
+    padding: 15px 13px;
+    min-height: 56px;
+  }
+
+  textarea {
+    min-height: 125px;
+  }
+
+  .more-costs {
+    padding: 16px;
+  }
+
+  .more-costs summary {
+    font-size: 1.22rem;
+  }
+
+  .decision-badge {
+    font-size: 1.12rem;
+    padding: 9px 14px;
+  }
+
   .main-result {
-    padding: 16px 18px;
+    padding: 20px 22px;
+  }
+
+  .main-result span {
+    font-size: 1.18rem;
   }
 
   .main-result strong {
-    font-size: 2.4rem;
+    font-size: 3.05rem;
   }
 
   .result-grid {
     grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .result-item {
+    padding: 17px;
+  }
+
+  .result-item span {
+    font-size: 1.1rem;
+  }
+
+  .result-item strong {
+    font-size: 1.32rem;
+  }
+
+  .mini-message {
+    padding: 17px;
+  }
+
+  .mini-message strong {
+    font-size: 1.25rem;
+  }
+
+  .mini-message p {
+    font-size: 1.15rem;
+    line-height: 1.75;
   }
 
   .btn {
     width: 100%;
+    font-size: 1.2rem;
+    padding: 15px 18px;
+  }
+
+  .records-section {
+    padding: 44px 0;
+  }
+
+  .records-header h2 {
+    font-size: 2.25rem;
+  }
+
+  .small-note {
+    font-size: 1.12rem;
+    line-height: 1.75;
   }
 
   .records-actions {
@@ -664,11 +776,36 @@ td {
     border-radius: 18px;
   }
 
+  th,
+  td {
+    font-size: 1.05rem;
+    padding: 15px 15px;
+  }
+
   .guide-card {
-    padding: 20px;
+    padding: 24px;
   }
 
   .guide-card h2 {
-    font-size: 1.65rem;
+    font-size: 2.15rem;
+  }
+
+  .guide-grid h3 {
+    font-size: 1.3rem;
+  }
+
+  .guide-grid p,
+  .guide-grid ol {
+    font-size: 1.18rem;
+    line-height: 1.9;
+  }
+
+  .disclaimer p {
+    font-size: 1.12rem;
+    line-height: 1.75;
+  }
+
+  .footer-inner {
+    font-size: 1.12rem;
   }
 }
