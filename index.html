@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Used Item Price Checker</title>
+  <meta
+    name="description"
+    content="Check your payout, bottom price, buyer offer, and competitor price before selling a used item."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" data-i18n="brand">Used Item Price Checker</a>
+
+      <nav class="nav-links">
+        <a href="#checker" data-i18n="navChecker">Checker</a>
+        <a href="#records" data-i18n="navRecords">Records</a>
+      </nav>
+
+      <div class="lang-switcher" aria-label="Language selector">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="zh-TW">繁中</button>
+        <button type="button" class="lang-btn" data-lang="zh-CN">简中</button>
+        <button type="button" class="lang-btn" data-lang="ja">日本語</button>
+        <button type="button" class="lang-btn" data-lang="ko">한국어</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow" data-i18n="eyebrow">Used item selling tool</p>
+        <h1 data-i18n="heroTitle">Don’t Sell Your Used Item Too Low</h1>
+        <p class="hero-text" data-i18n="heroText">
+          Check your payout, bottom price, and buyer offer before selling.
+        </p>
+
+        <div class="how-to">
+          <h2 data-i18n="howToTitle">How to use</h2>
+          <ol>
+            <li data-i18n="howTo1">Enter your selling price and buyer offer.</li>
+            <li data-i18n="howTo2">Add platform fees, shipping, and other costs.</li>
+            <li data-i18n="howTo3">Check the bottom price, net payout, and offer decision.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="checker" class="checker-section">
+      <div class="container checker-layout">
+        <form id="checkerForm" class="card form-card" autocomplete="off">
+          <div class="form-block">
+            <h2 data-i18n="sectionPrice">Price</h2>
+
+            <label for="itemName" data-i18n="itemNameLabel">Item name</label>
+            <input
+              id="itemName"
+              type="text"
+              placeholder="Used chair"
+              data-i18n-placeholder="itemNamePlaceholder"
+            />
+
+            <label for="sellingPrice" data-i18n="sellingPriceLabel">Selling price</label>
+            <input
+              id="sellingPrice"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+
+            <label for="buyerOffer" data-i18n="buyerOfferLabel">Buyer offer</label>
+            <input
+              id="buyerOffer"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+
+            <label for="minimumCash" data-i18n="minimumCashLabel">Minimum cash back</label>
+            <input
+              id="minimumCash"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+          </div>
+
+          <div class="form-block">
+            <h2 data-i18n="sectionCosts">Costs</h2>
+
+            <label for="platformFee" data-i18n="platformFeeLabel">Platform fee %</label>
+            <input
+              id="platformFee"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              max="99"
+              step="0.01"
+              value="0"
+            />
+
+            <label for="shipping" data-i18n="shippingLabel">Shipping</label>
+            <input
+              id="shipping"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+
+            <details class="more-costs">
+              <summary data-i18n="moreCosts">More costs</summary>
+
+              <label for="paymentFee" data-i18n="paymentFeeLabel">Payment fee</label>
+              <input
+                id="paymentFee"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                step="0.01"
+                value="0"
+              />
+
+              <label for="packaging" data-i18n="packagingLabel">Packaging</label>
+              <input
+                id="packaging"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                step="0.01"
+                value="0"
+              />
+
+              <label for="cleaningRepair" data-i18n="cleaningRepairLabel">Cleaning / repair</label>
+              <input
+                id="cleaningRepair"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                step="0.01"
+                value="0"
+              />
+
+              <label for="otherCost" data-i18n="otherCostLabel">Other cost</label>
+              <input
+                id="otherCost"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                step="0.01"
+                value="0"
+              />
+
+              <label for="buyInCost" data-i18n="buyInCostLabel">Buy-in cost</label>
+              <input
+                id="buyInCost"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                step="0.01"
+                value="0"
+              />
+            </details>
+          </div>
+
+          <div class="form-block">
+            <h2 data-i18n="sectionMarket">Market</h2>
+
+            <label for="competitorPrice" data-i18n="competitorPriceLabel">Competitor price</label>
+            <input
+              id="competitorPrice"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+          </div>
+
+          <div class="form-block">
+            <h2 data-i18n="sectionRecord">Record</h2>
+
+            <label for="recordQty" data-i18n="recordQtyLabel">Qty</label>
+            <input
+              id="recordQty"
+              type="number"
+              inputmode="numeric"
+              min="1"
+              step="1"
+              value="1"
+            />
+
+            <label for="recordNote" data-i18n="recordNoteLabel">Note</label>
+            <textarea
+              id="recordNote"
+              rows="3"
+              placeholder="Pickup, buyer paid shipping, small scratch..."
+              data-i18n-placeholder="recordNotePlaceholder"
+            ></textarea>
+          </div>
+
+          <div class="button-row">
+            <button type="button" id="resetBtn" class="btn secondary-btn" data-i18n="resetBtn">
+              Reset
+            </button>
+          </div>
+        </form>
+
+        <aside class="card result-card" aria-live="polite">
+          <div id="decisionBadge" class="decision-badge neutral" data-i18n="ready">
+            Ready
+          </div>
+
+          <div class="main-result">
+            <span data-i18n="dontSellBelow">Don’t sell below</span>
+            <strong id="bottomPrice">0.00</strong>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-item">
+              <span data-i18n="buyerOfferResult">Buyer offer</span>
+              <strong id="offerDecision">—</strong>
+            </div>
+
+            <div class="result-item">
+              <span data-i18n="netPayoutLabel">Net payout</span>
+              <strong id="netPayout">0.00</strong>
+            </div>
+
+            <div class="result-item">
+              <span data-i18n="totalCostsLabel">Total costs</span>
+              <strong id="totalCosts">0.00</strong>
+            </div>
+
+            <div class="result-item">
+              <span data-i18n="gapLabel">Gap</span>
+              <strong id="gapAmount">0.00</strong>
+            </div>
+          </div>
+
+          <div class="mini-message">
+            <strong data-i18n="competitionTitle">Competition</strong>
+            <p id="competitionMessage">Enter competitor price if needed.</p>
+          </div>
+
+          <div class="mini-message">
+            <strong data-i18n="replyTitle">Reply</strong>
+            <p id="replyMessage">Enter a buyer offer to get a short reply.</p>
+          </div>
+
+          <button type="button" id="addRecordBtn" class="btn primary-btn full-btn" data-i18n="addRecordBtn">
+            Add to records
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="records" class="records-section">
+      <div class="container">
+        <div class="records-header">
+          <div>
+            <p class="eyebrow" data-i18n="recordsEyebrow">Records</p>
+            <h2 data-i18n="recordsTitle">Sold records</h2>
+            <p class="small-note" data-i18n="recordsNote">
+              Records are saved in this browser. Download records if you want a backup.
+            </p>
+          </div>
+
+          <div class="records-actions">
+            <button type="button" id="downloadCsvBtn" class="btn secondary-btn" data-i18n="downloadRecordsBtn">
+              Download records
+            </button>
+            <button type="button" id="clearRecordsBtn" class="btn danger-btn" data-i18n="clearBtn">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="tableDate">Date</th>
+                <th data-i18n="tableItem">Item</th>
+                <th data-i18n="tableQty">Qty</th>
+                <th data-i18n="tableSoldPrice">Sold price</th>
+                <th data-i18n="tableNetPayout">Net payout</th>
+                <th data-i18n="tableResult">Result</th>
+                <th data-i18n="tableNote">Note</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="recordsBody">
+              <tr>
+                <td colspan="8" class="empty-row" data-i18n="noRecords">No records yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="disclaimer">
+      <div class="container">
+        <p data-i18n="disclaimer">
+          This tool is for personal calculation only. It is not an appraisal,
+          receipt, invoice, or guaranteed selling price.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> <span data-i18n="brand">Used Item Price Checker</span></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
