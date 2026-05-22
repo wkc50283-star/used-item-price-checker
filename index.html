@@ -41,9 +41,8 @@
         <p class="hero-text" data-i18n="heroText">
           Check your payout, bottom price, and buyer offer before selling.
         </p>
-
-        <p class="how-to-line" data-i18n="howToLine">
-          How to use: Price → Costs → Result
+        <p class="quick-hint" data-i18n="quickHint">
+          Enter price and costs. Results update instantly.
         </p>
       </div>
     </section>
@@ -216,19 +215,19 @@
         </form>
 
         <aside class="card result-card" aria-live="polite">
-          <div id="decisionBadge" class="decision-badge neutral" data-i18n="ready">
-            Ready
+          <div id="decisionBadge" class="decision-badge neutral" data-i18n="resultReady">
+            Result
           </div>
 
           <div class="main-result">
-            <span data-i18n="dontSellBelow">Don’t sell below</span>
+            <span data-i18n="bottomPriceLabel">Bottom price</span>
             <strong id="bottomPrice">0.00</strong>
           </div>
 
           <div class="result-grid">
             <div class="result-item">
               <span data-i18n="buyerOfferResult">Buyer offer</span>
-              <strong id="offerDecision">—</strong>
+              <strong id="offerDecision">Not checked yet</strong>
             </div>
 
             <div class="result-item">
@@ -305,6 +304,56 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section">
+      <div class="container">
+        <div class="guide-card">
+          <p class="eyebrow" data-i18n="guideEyebrow">Guide</p>
+          <h2 data-i18n="guideTitle">How to use this tool</h2>
+
+          <div class="guide-grid">
+            <div>
+              <h3 data-i18n="guideWhatTitle">What does this tool do?</h3>
+              <p data-i18n="guideWhatText">
+                It helps you check your payout, bottom price, and buyer offer before selling a used item.
+              </p>
+            </div>
+
+            <div>
+              <h3 data-i18n="guideUseTitle">How to use</h3>
+              <ol>
+                <li data-i18n="guideUse1">Enter your selling price.</li>
+                <li data-i18n="guideUse2">Enter buyer offer if someone negotiates.</li>
+                <li data-i18n="guideUse3">Enter your minimum cash back.</li>
+                <li data-i18n="guideUse4">Add fees, shipping, and other costs.</li>
+                <li data-i18n="guideUse5">Check the result on the right.</li>
+              </ol>
+            </div>
+
+            <div>
+              <h3 data-i18n="guideResultTitle">How to read results</h3>
+              <p data-i18n="guideResultText">
+                Bottom price means the price you should avoid going below. Net payout is what you keep after costs.
+              </p>
+            </div>
+
+            <div>
+              <h3 data-i18n="guideRecordTitle">What are sold records?</h3>
+              <p data-i18n="guideRecordText">
+                If an item is sold, you can add it to records. Records are saved only in this browser.
+              </p>
+            </div>
+
+            <div>
+              <h3 data-i18n="guideNoteTitle">Note</h3>
+              <p data-i18n="guideNoteText">
+                This is not an appraisal or market price tool. You enter all prices and decide whether to sell.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
