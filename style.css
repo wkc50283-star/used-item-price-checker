@@ -580,7 +580,7 @@ td {
 }
 
 /* 手機版：全部字體放大、輸入區更好點 */
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   body {
     font-size: 19px;
     line-height: 1.65;
