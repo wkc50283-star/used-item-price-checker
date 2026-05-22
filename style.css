@@ -552,13 +552,16 @@ td {
   font-size: 0.9rem;
 }
 
-@media (max-width: 900px) {
+/* 平板與手機：主工具改成上下排列 */
+@media (max-width: 1180px) {
   .checker-layout {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .result-card {
     position: static;
+    width: 100%;
   }
 
   .records-header {
@@ -576,9 +579,14 @@ td {
   }
 }
 
+/* 手機版細節調整 */
 @media (max-width: 560px) {
   .container {
     width: min(100% - 22px, 1120px);
+  }
+
+  .site-header {
+    position: static;
   }
 
   .header-inner {
@@ -588,21 +596,56 @@ td {
     flex-direction: column;
   }
 
+  .brand {
+    font-size: 0.98rem;
+  }
+
   .nav-links {
     gap: 14px;
+  }
+
+  .lang-switcher {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .hero {
     padding-top: 22px;
   }
 
+  .hero-inner {
+    max-width: 100%;
+  }
+
   h1 {
     font-size: clamp(1.9rem, 10vw, 3rem);
   }
 
+  .checker-section {
+    padding-top: 12px;
+  }
+
+  .checker-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .form-card,
   .result-card {
+    width: 100%;
     padding: 16px;
+  }
+
+  .result-card {
+    position: static;
+  }
+
+  .main-result {
+    padding: 16px 18px;
+  }
+
+  .main-result strong {
+    font-size: 2.4rem;
   }
 
   .result-grid {
@@ -615,6 +658,10 @@ td {
 
   .records-actions {
     width: 100%;
+  }
+
+  .table-wrap {
+    border-radius: 18px;
   }
 
   .guide-card {
