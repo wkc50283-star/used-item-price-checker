@@ -9,7 +9,7 @@ const translations = {
     eyebrow: "Used item selling tool",
     heroTitle: "Don’t Sell Your Used Item Too Low",
     heroText: "Check your payout, bottom price, and buyer offer before selling.",
-    howToLine: "How to use: Price → Costs → Result",
+    quickHint: "Enter price and costs. Results update instantly.",
     sectionPrice: "Price",
     itemNameLabel: "Item name",
     itemNamePlaceholder: "Used chair",
@@ -32,8 +32,8 @@ const translations = {
     recordNoteLabel: "Note",
     recordNotePlaceholder: "Pickup, buyer paid shipping, small scratch...",
     resetBtn: "Reset",
-    ready: "Ready",
-    dontSellBelow: "Don’t sell below",
+    resultReady: "Result",
+    bottomPriceLabel: "Bottom price",
     buyerOfferResult: "Buyer offer",
     netPayoutLabel: "Net payout",
     totalCostsLabel: "Total costs",
@@ -58,6 +58,8 @@ const translations = {
     accept: "Accept",
     caution: "Be careful",
     reject: "Reject",
+    notChecked: "Not checked yet",
+    enterData: "Enter price and costs first.",
     acceptText: "Looks acceptable",
     cautionText: "Close to your bottom line",
     rejectText: "Not recommended",
@@ -72,7 +74,23 @@ const translations = {
     unnamedItem: "Unnamed item",
     deleteBtn: "Delete",
     noRecordsDownload: "No records to download.",
-    clearConfirm: "Clear all records?"
+    clearConfirm: "Clear all records?",
+    guideEyebrow: "Guide",
+    guideTitle: "How to use this tool",
+    guideWhatTitle: "What does this tool do?",
+    guideWhatText: "It helps you check your payout, bottom price, and buyer offer before selling a used item.",
+    guideUseTitle: "How to use",
+    guideUse1: "Enter your selling price.",
+    guideUse2: "Enter buyer offer if someone negotiates.",
+    guideUse3: "Enter your minimum cash back.",
+    guideUse4: "Add fees, shipping, and other costs.",
+    guideUse5: "Check the result on the right.",
+    guideResultTitle: "How to read results",
+    guideResultText: "Bottom price means the price you should avoid going below. Net payout is what you keep after costs.",
+    guideRecordTitle: "What are sold records?",
+    guideRecordText: "If an item is sold, you can add it to records. Records are saved only in this browser.",
+    guideNoteTitle: "Note",
+    guideNoteText: "This is not an appraisal or market price tool. You enter all prices and decide whether to sell."
   },
 
   "zh-TW": {
@@ -82,7 +100,7 @@ const translations = {
     eyebrow: "二手商品銷售工具",
     heroTitle: "不要把二手商品賣得太低",
     heroText: "賣之前先檢查實際入帳、底線價格和買家出價。",
-    howToLine: "使用方式：價格 → 成本 → 結果",
+    quickHint: "輸入價格與成本，右側會同步顯示結果。",
     sectionPrice: "價格",
     itemNameLabel: "商品名稱",
     itemNamePlaceholder: "二手椅子",
@@ -105,8 +123,8 @@ const translations = {
     recordNoteLabel: "備註",
     recordNotePlaceholder: "面交、買家付運費、小刮傷...",
     resetBtn: "重設",
-    ready: "準備中",
-    dontSellBelow: "不建議低於",
+    resultReady: "試算結果",
+    bottomPriceLabel: "建議底價",
     buyerOfferResult: "買家出價",
     netPayoutLabel: "實際入帳",
     totalCostsLabel: "總成本",
@@ -131,6 +149,8 @@ const translations = {
     accept: "可以接受",
     caution: "要小心",
     reject: "不建議",
+    notChecked: "尚未判斷",
+    enterData: "請先輸入價格與成本。",
     acceptText: "可以接受",
     cautionText: "接近底線",
     rejectText: "不建議接受",
@@ -145,7 +165,23 @@ const translations = {
     unnamedItem: "未命名商品",
     deleteBtn: "刪除",
     noRecordsDownload: "目前沒有紀錄可下載。",
-    clearConfirm: "確定要清除全部紀錄嗎？"
+    clearConfirm: "確定要清除全部紀錄嗎？",
+    guideEyebrow: "使用說明",
+    guideTitle: "如何使用這個工具",
+    guideWhatTitle: "這個工具在做什麼？",
+    guideWhatText: "幫你在賣二手商品前，快速檢查實際入帳、建議底價與買家出價是否合理。",
+    guideUseTitle: "怎麼使用？",
+    guideUse1: "輸入想賣價格。",
+    guideUse2: "如果有買家殺價，輸入買家出價。",
+    guideUse3: "輸入最低想拿回金額。",
+    guideUse4: "輸入平台手續費、運費與其他成本。",
+    guideUse5: "查看右側結果。",
+    guideResultTitle: "怎麼看結果？",
+    guideResultText: "建議底價是不建議再低於的價格。實際入帳是扣掉費用後真正拿到的金額。",
+    guideRecordTitle: "售出紀錄是什麼？",
+    guideRecordText: "如果商品已售出，可以加入紀錄，方便之後回看。紀錄只存在目前瀏覽器。",
+    guideNoteTitle: "注意事項",
+    guideNoteText: "這不是正式估價或行情判斷工具。所有價格都由你自行輸入，是否出售請自行判斷。"
   },
 
   "zh-CN": {
@@ -155,7 +191,7 @@ const translations = {
     eyebrow: "二手商品销售工具",
     heroTitle: "不要把二手商品卖得太低",
     heroText: "卖之前先检查实际入账、底线价格和买家出价。",
-    howToLine: "使用方式：价格 → 成本 → 结果",
+    quickHint: "输入价格与成本，右侧会同步显示结果。",
     sectionPrice: "价格",
     itemNameLabel: "商品名称",
     itemNamePlaceholder: "二手椅子",
@@ -178,8 +214,8 @@ const translations = {
     recordNoteLabel: "备注",
     recordNotePlaceholder: "面交、买家付运费、小刮伤...",
     resetBtn: "重置",
-    ready: "准备中",
-    dontSellBelow: "不建议低于",
+    resultReady: "试算结果",
+    bottomPriceLabel: "建议底价",
     buyerOfferResult: "买家出价",
     netPayoutLabel: "实际入账",
     totalCostsLabel: "总成本",
@@ -204,6 +240,8 @@ const translations = {
     accept: "可以接受",
     caution: "要小心",
     reject: "不建议",
+    notChecked: "尚未判断",
+    enterData: "请先输入价格与成本。",
     acceptText: "可以接受",
     cautionText: "接近底线",
     rejectText: "不建议接受",
@@ -218,7 +256,23 @@ const translations = {
     unnamedItem: "未命名商品",
     deleteBtn: "删除",
     noRecordsDownload: "目前没有记录可下载。",
-    clearConfirm: "确定要清除全部记录吗？"
+    clearConfirm: "确定要清除全部记录吗？",
+    guideEyebrow: "使用说明",
+    guideTitle: "如何使用这个工具",
+    guideWhatTitle: "这个工具在做什么？",
+    guideWhatText: "帮你在卖二手商品前，快速检查实际入账、建议底价与买家出价是否合理。",
+    guideUseTitle: "怎么使用？",
+    guideUse1: "输入想卖价格。",
+    guideUse2: "如果有买家砍价，输入买家出价。",
+    guideUse3: "输入最低想拿回金额。",
+    guideUse4: "输入平台手续费、运费与其他成本。",
+    guideUse5: "查看右侧结果。",
+    guideResultTitle: "怎么看结果？",
+    guideResultText: "建议底价是不建议再低于的价格。实际入账是扣掉费用后真正拿到的金额。",
+    guideRecordTitle: "售出记录是什么？",
+    guideRecordText: "如果商品已售出，可以加入记录，方便之后回看。记录只保存在当前浏览器。",
+    guideNoteTitle: "注意事项",
+    guideNoteText: "这不是正式估价或行情判断工具。所有价格都由你自行输入，是否出售请自行判断。"
   },
 
   ja: {
@@ -228,7 +282,7 @@ const translations = {
     eyebrow: "中古品販売ツール",
     heroTitle: "中古品を安く売りすぎないように",
     heroText: "販売前に手取り額、下限価格、購入希望額を確認します。",
-    howToLine: "使い方：価格 → 費用 → 結果",
+    quickHint: "価格と費用を入力すると、右側に結果がすぐ表示されます。",
     sectionPrice: "価格",
     itemNameLabel: "商品名",
     itemNamePlaceholder: "中古の椅子",
@@ -251,8 +305,8 @@ const translations = {
     recordNoteLabel: "メモ",
     recordNotePlaceholder: "直接引き渡し、送料は購入者負担、小さな傷...",
     resetBtn: "リセット",
-    ready: "準備中",
-    dontSellBelow: "これ以下では売らない",
+    resultReady: "計算結果",
+    bottomPriceLabel: "目安下限価格",
     buyerOfferResult: "購入希望額",
     netPayoutLabel: "手取り額",
     totalCostsLabel: "総費用",
@@ -277,6 +331,8 @@ const translations = {
     accept: "受け入れ可",
     caution: "注意",
     reject: "非推奨",
+    notChecked: "未確認",
+    enterData: "価格と費用を入力してください。",
     acceptText: "受け入れ可能です",
     cautionText: "下限に近いです",
     rejectText: "おすすめしません",
@@ -291,7 +347,23 @@ const translations = {
     unnamedItem: "無名の商品",
     deleteBtn: "削除",
     noRecordsDownload: "ダウンロードできる記録がありません。",
-    clearConfirm: "すべての記録を削除しますか？"
+    clearConfirm: "すべての記録を削除しますか？",
+    guideEyebrow: "ガイド",
+    guideTitle: "このツールの使い方",
+    guideWhatTitle: "このツールでできること",
+    guideWhatText: "中古品を販売する前に、手取り額、目安下限価格、購入希望額を確認できます。",
+    guideUseTitle: "使い方",
+    guideUse1: "販売したい価格を入力します。",
+    guideUse2: "値下げ交渉がある場合は購入希望額を入力します。",
+    guideUse3: "最低限ほしい手取り額を入力します。",
+    guideUse4: "手数料、送料、その他の費用を入力します。",
+    guideUse5: "右側の結果を確認します。",
+    guideResultTitle: "結果の見方",
+    guideResultText: "目安下限価格は、これ以下では売らない方がよい価格です。手取り額は費用を差し引いた後の金額です。",
+    guideRecordTitle: "販売記録とは",
+    guideRecordText: "商品が売れたら記録に追加できます。記録はこのブラウザにのみ保存されます。",
+    guideNoteTitle: "注意事項",
+    guideNoteText: "これは査定や市場価格を判断するツールではありません。価格はすべて自分で入力し、販売判断も自分で行ってください。"
   },
 
   ko: {
@@ -301,7 +373,7 @@ const translations = {
     eyebrow: "중고 판매 도구",
     heroTitle: "중고 물품을 너무 싸게 팔지 마세요",
     heroText: "판매 전에 실제 수령액, 하한 가격, 구매자 제안가를 확인하세요.",
-    howToLine: "사용 방법: 가격 → 비용 → 결과",
+    quickHint: "가격과 비용을 입력하면 오른쪽에 결과가 바로 표시됩니다.",
     sectionPrice: "가격",
     itemNameLabel: "물품 이름",
     itemNamePlaceholder: "중고 의자",
@@ -324,8 +396,8 @@ const translations = {
     recordNoteLabel: "메모",
     recordNotePlaceholder: "직거래, 구매자 배송비 부담, 작은 흠집...",
     resetBtn: "초기화",
-    ready: "준비",
-    dontSellBelow: "이 가격 아래로 팔지 않기",
+    resultReady: "계산 결과",
+    bottomPriceLabel: "하한 가격",
     buyerOfferResult: "구매자 제안",
     netPayoutLabel: "실제 수령액",
     totalCostsLabel: "총비용",
@@ -350,6 +422,8 @@ const translations = {
     accept: "수락 가능",
     caution: "주의",
     reject: "비추천",
+    notChecked: "아직 확인 전",
+    enterData: "가격과 비용을 먼저 입력하세요.",
     acceptText: "수락 가능해 보입니다",
     cautionText: "하한선에 가깝습니다",
     rejectText: "추천하지 않습니다",
@@ -364,7 +438,23 @@ const translations = {
     unnamedItem: "이름 없는 물품",
     deleteBtn: "삭제",
     noRecordsDownload: "다운로드할 기록이 없습니다.",
-    clearConfirm: "모든 기록을 삭제하시겠습니까?"
+    clearConfirm: "모든 기록을 삭제하시겠습니까?",
+    guideEyebrow: "사용 설명",
+    guideTitle: "이 도구 사용 방법",
+    guideWhatTitle: "이 도구는 무엇을 하나요?",
+    guideWhatText: "중고 물품을 판매하기 전에 실제 수령액, 하한 가격, 구매자 제안가를 확인할 수 있습니다.",
+    guideUseTitle: "사용 방법",
+    guideUse1: "판매 희망 가격을 입력합니다.",
+    guideUse2: "구매자가 가격을 제안하면 구매자 제안가를 입력합니다.",
+    guideUse3: "최소 회수 금액을 입력합니다.",
+    guideUse4: "수수료, 배송비, 기타 비용을 입력합니다.",
+    guideUse5: "오른쪽 결과를 확인합니다.",
+    guideResultTitle: "결과 보는 법",
+    guideResultText: "하한 가격은 그보다 낮게 팔지 않는 것이 좋은 가격입니다. 실제 수령액은 비용을 뺀 뒤 남는 금액입니다.",
+    guideRecordTitle: "판매 기록이란?",
+    guideRecordText: "물품이 판매되면 기록에 추가할 수 있습니다. 기록은 이 브라우저에만 저장됩니다.",
+    guideNoteTitle: "주의 사항",
+    guideNoteText: "이 도구는 감정이나 시장 가격 판단 도구가 아닙니다. 모든 가격은 직접 입력하고 판매 여부도 직접 판단해야 합니다."
   }
 };
 
@@ -412,6 +502,14 @@ function getNumber(input) {
 function getInteger(input) {
   const value = parseInt(input.value, 10);
   return Number.isFinite(value) ? value : 0;
+}
+
+function hasUserInput() {
+  return (
+    getNumber(fields.sellingPrice) > 0 ||
+    getNumber(fields.buyerOffer) > 0 ||
+    getNumber(fields.minimumCash) > 0
+  );
 }
 
 function formatNumber(value) {
@@ -484,9 +582,19 @@ function calculate() {
   const bottomPrice = (minimumCash + fixedCosts) / (1 - platformRate);
   const gap = netPayout - minimumCash;
 
-  const decision = getDecision(gap, minimumCash);
-  const competition = getCompetitionMessage(competitorPrice, bottomPrice);
-  const reply = getReplyMessage(decision, buyerOffer);
+  const userHasInput = hasUserInput();
+
+  const decision = userHasInput
+    ? getDecision(gap, minimumCash)
+    : getNeutralDecision();
+
+  const competition = userHasInput
+    ? getCompetitionMessage(competitorPrice, bottomPrice)
+    : t("competitionDefault");
+
+  const reply = userHasInput
+    ? getReplyMessage(decision, buyerOffer)
+    : t("replyDefault");
 
   latestResult = {
     itemName: fields.itemName.value.trim(),
@@ -510,10 +618,19 @@ function calculate() {
     gap,
     decision,
     competition,
-    reply
+    reply,
+    userHasInput
   };
 
   renderResult(latestResult);
+}
+
+function getNeutralDecision() {
+  return {
+    label: t("resultReady"),
+    className: "neutral",
+    text: t("notChecked")
+  };
 }
 
 function getDecision(gap, minimumCash) {
@@ -580,18 +697,18 @@ function renderResult(result) {
   output.decisionBadge.className = `decision-badge ${result.decision.className}`;
 
   output.bottomPrice.textContent = formatNumber(result.bottomPrice);
-  output.offerDecision.textContent = result.decision.text;
+  output.offerDecision.textContent = result.userHasInput ? result.decision.text : t("notChecked");
   output.netPayout.textContent = formatNumber(result.netPayout);
   output.totalCosts.textContent = formatNumber(result.totalCosts);
   output.gapAmount.textContent = formatNumber(result.gap);
   output.competitionMessage.textContent = result.competition;
-  output.replyMessage.textContent = result.reply;
+  output.replyMessage.textContent = result.userHasInput ? result.reply : t("replyDefault");
 }
 
 function addRecord() {
   calculate();
 
-  if (!latestResult) {
+  if (!latestResult || !latestResult.userHasInput) {
     return;
   }
 
