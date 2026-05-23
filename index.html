@@ -50,23 +50,80 @@
     </section>
 
     <section id="checker" class="checker-section">
-      <div class="container">
-        <form id="checkerForm" class="checker-layout" autocomplete="off">
-          <section class="card form-card price-card">
-            <div class="form-block no-border">
-              <h2 data-i18n="sectionPrice">Price</h2>
+      <div class="container checker-layout">
+        <form id="checkerForm" class="card form-card" autocomplete="off">
+          <div class="form-block">
+            <h2 data-i18n="sectionPrice">Price</h2>
 
-              <label for="itemName" data-i18n="itemNameLabel">Item name</label>
-              <input
-                id="itemName"
-                type="text"
-                placeholder="Used chair"
-                data-i18n-placeholder="itemNamePlaceholder"
-              />
+            <label for="itemName" data-i18n="itemNameLabel">Item name</label>
+            <input
+              id="itemName"
+              type="text"
+              placeholder="Used chair"
+              data-i18n-placeholder="itemNamePlaceholder"
+            />
 
-              <label for="sellingPrice" data-i18n="sellingPriceLabel">Selling price</label>
+            <label for="sellingPrice" data-i18n="sellingPriceLabel">Selling price</label>
+            <input
+              id="sellingPrice"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+
+            <label for="buyerOffer" data-i18n="buyerOfferLabel">Buyer offer</label>
+            <input
+              id="buyerOffer"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+
+            <label for="minimumCash" data-i18n="minimumCashLabel">Minimum cash back</label>
+            <input
+              id="minimumCash"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+          </div>
+
+          <div class="form-block">
+            <h2 data-i18n="sectionCosts">Costs</h2>
+
+            <label for="platformFee" data-i18n="platformFeeLabel">Platform fee %</label>
+            <input
+              id="platformFee"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              max="99"
+              step="0.01"
+              value="0"
+            />
+
+            <label for="shipping" data-i18n="shippingLabel">Shipping</label>
+            <input
+              id="shipping"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+
+            <details class="more-costs">
+              <summary data-i18n="moreCosts">More costs</summary>
+
+              <label for="paymentFee" data-i18n="paymentFeeLabel">Payment fee</label>
               <input
-                id="sellingPrice"
+                id="paymentFee"
                 type="number"
                 inputmode="decimal"
                 min="0"
@@ -74,9 +131,9 @@
                 value="0"
               />
 
-              <label for="buyerOffer" data-i18n="buyerOfferLabel">Buyer offer</label>
+              <label for="packaging" data-i18n="packagingLabel">Packaging</label>
               <input
-                id="buyerOffer"
+                id="packaging"
                 type="number"
                 inputmode="decimal"
                 min="0"
@@ -84,79 +141,9 @@
                 value="0"
               />
 
-              <label for="minimumCash" data-i18n="minimumCashLabel">Minimum cash back</label>
+              <label for="cleaningRepair" data-i18n="cleaningRepairLabel">Cleaning / repair</label>
               <input
-                id="minimumCash"
-                type="number"
-                inputmode="decimal"
-                min="0"
-                step="0.01"
-                value="0"
-              />
-            </div>
-          </section>
-
-          <aside class="card result-card" aria-live="polite">
-            <div id="decisionBadge" class="decision-badge neutral" data-i18n="resultReady">
-              Result
-            </div>
-
-            <div class="main-result">
-              <span data-i18n="bottomPriceLabel">Bottom price</span>
-              <strong id="bottomPrice">0.00</strong>
-            </div>
-
-            <div class="result-grid">
-              <div class="result-item">
-                <span data-i18n="buyerOfferResult">Buyer offer</span>
-                <strong id="offerDecision">Not checked yet</strong>
-              </div>
-
-              <div class="result-item">
-                <span data-i18n="netPayoutLabel">Net payout</span>
-                <strong id="netPayout">0.00</strong>
-              </div>
-
-              <div class="result-item">
-                <span data-i18n="totalCostsLabel">Total costs</span>
-                <strong id="totalCosts">0.00</strong>
-              </div>
-
-              <div class="result-item">
-                <span data-i18n="gapLabel">Gap</span>
-                <strong id="gapAmount">0.00</strong>
-              </div>
-            </div>
-
-            <div class="mini-message">
-              <strong data-i18n="competitionTitle">Competition</strong>
-              <p id="competitionMessage">Enter competitor price if needed.</p>
-            </div>
-
-            <div class="mini-message">
-              <strong data-i18n="replyTitle">Reply</strong>
-              <p id="replyMessage">Enter a buyer offer to get a short reply.</p>
-            </div>
-          </aside>
-
-          <section class="card form-card costs-card">
-            <div class="form-block no-border">
-              <h2 data-i18n="sectionCosts">Costs</h2>
-
-              <label for="platformFee" data-i18n="platformFeeLabel">Platform fee %</label>
-              <input
-                id="platformFee"
-                type="number"
-                inputmode="decimal"
-                min="0"
-                max="99"
-                step="0.01"
-                value="0"
-              />
-
-              <label for="shipping" data-i18n="shippingLabel">Shipping</label>
-              <input
-                id="shipping"
+                id="cleaningRepair"
                 type="number"
                 inputmode="decimal"
                 min="0"
@@ -164,111 +151,117 @@
                 value="0"
               />
 
-              <details class="more-costs">
-                <summary data-i18n="moreCosts">More costs</summary>
-
-                <label for="paymentFee" data-i18n="paymentFeeLabel">Payment fee</label>
-                <input
-                  id="paymentFee"
-                  type="number"
-                  inputmode="decimal"
-                  min="0"
-                  step="0.01"
-                  value="0"
-                />
-
-                <label for="packaging" data-i18n="packagingLabel">Packaging</label>
-                <input
-                  id="packaging"
-                  type="number"
-                  inputmode="decimal"
-                  min="0"
-                  step="0.01"
-                  value="0"
-                />
-
-                <label for="cleaningRepair" data-i18n="cleaningRepairLabel">Cleaning / repair</label>
-                <input
-                  id="cleaningRepair"
-                  type="number"
-                  inputmode="decimal"
-                  min="0"
-                  step="0.01"
-                  value="0"
-                />
-
-                <label for="otherCost" data-i18n="otherCostLabel">Other cost</label>
-                <input
-                  id="otherCost"
-                  type="number"
-                  inputmode="decimal"
-                  min="0"
-                  step="0.01"
-                  value="0"
-                />
-
-                <label for="buyInCost" data-i18n="buyInCostLabel">Buy-in cost</label>
-                <input
-                  id="buyInCost"
-                  type="number"
-                  inputmode="decimal"
-                  min="0"
-                  step="0.01"
-                  value="0"
-                />
-              </details>
-            </div>
-          </section>
-
-          <section class="card form-card market-card">
-            <div class="form-block no-border">
-              <h2 data-i18n="sectionMarket">Market</h2>
-
-              <label for="competitorPrice" data-i18n="competitorPriceLabel">Competitor price</label>
+              <label for="otherCost" data-i18n="otherCostLabel">Other cost</label>
               <input
-                id="competitorPrice"
+                id="otherCost"
                 type="number"
                 inputmode="decimal"
                 min="0"
                 step="0.01"
                 value="0"
               />
-            </div>
-          </section>
 
-          <section class="card form-card record-card">
-            <div class="form-block no-border">
-              <h2 data-i18n="sectionRecord">Record</h2>
-
-              <label for="recordQty" data-i18n="recordQtyLabel">Qty</label>
+              <label for="buyInCost" data-i18n="buyInCostLabel">Buy-in cost</label>
               <input
-                id="recordQty"
+                id="buyInCost"
                 type="number"
-                inputmode="numeric"
-                min="1"
-                step="1"
-                value="1"
+                inputmode="decimal"
+                min="0"
+                step="0.01"
+                value="0"
               />
+            </details>
+          </div>
 
-              <label for="recordNote" data-i18n="recordNoteLabel">Note</label>
-              <textarea
-                id="recordNote"
-                rows="3"
-                placeholder="Pickup, buyer paid shipping, small scratch..."
-                data-i18n-placeholder="recordNotePlaceholder"
-              ></textarea>
+          <div class="form-block">
+            <h2 data-i18n="sectionMarket">Market</h2>
 
-              <div class="button-row">
-                <button type="button" id="resetBtn" class="btn secondary-btn" data-i18n="resetBtn">
-                  Reset
-                </button>
-                <button type="button" id="addRecordBtn" class="btn primary-btn" data-i18n="addRecordBtn">
-                  Add to records
-                </button>
-              </div>
-            </div>
-          </section>
+            <label for="competitorPrice" data-i18n="competitorPriceLabel">Competitor price</label>
+            <input
+              id="competitorPrice"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="0.01"
+              value="0"
+            />
+          </div>
+
+          <div class="form-block">
+            <h2 data-i18n="sectionRecord">Record</h2>
+
+            <label for="recordQty" data-i18n="recordQtyLabel">Qty</label>
+            <input
+              id="recordQty"
+              type="number"
+              inputmode="numeric"
+              min="1"
+              step="1"
+              value="1"
+            />
+
+            <label for="recordNote" data-i18n="recordNoteLabel">Note</label>
+            <textarea
+              id="recordNote"
+              rows="3"
+              placeholder="Pickup, buyer paid shipping, small scratch..."
+              data-i18n-placeholder="recordNotePlaceholder"
+            ></textarea>
+          </div>
+
+          <div class="button-row">
+            <button type="button" id="resetBtn" class="btn secondary-btn" data-i18n="resetBtn">
+              Reset
+            </button>
+          </div>
         </form>
+
+        <aside class="card result-card" aria-live="polite">
+          <div id="decisionBadge" class="decision-badge neutral" data-i18n="resultReady">
+            Result
+          </div>
+
+          <div class="main-result">
+            <span data-i18n="bottomPriceLabel">Bottom price</span>
+            <strong id="bottomPrice">0.00</strong>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-item">
+              <span data-i18n="buyerOfferResult">Buyer offer</span>
+              <strong id="offerDecision">Not checked yet</strong>
+            </div>
+
+            <div class="result-item">
+              <span data-i18n="netPayoutLabel">Net payout</span>
+              <strong id="netPayout">0.00</strong>
+            </div>
+
+            <div class="result-item">
+              <span data-i18n="totalCostsLabel">Total costs</span>
+              <strong id="totalCosts">0.00</strong>
+            </div>
+
+            <div class="result-item">
+              <span data-i18n="gapLabel">Gap</span>
+              <strong id="gapAmount">0.00</strong>
+            </div>
+          </div>
+
+          <div class="mini-message">
+            <strong data-i18n="competitionTitle">Competition</strong>
+            <p id="competitionMessage">Enter competitor price if needed.</p>
+          </div>
+
+          <div class="mini-message">
+            <strong data-i18n="replyTitle">Reply</strong>
+            <p id="replyMessage">Enter a buyer offer to get a short reply.</p>
+          </div>
+
+          <button type="button" id="addRecordBtn" class="btn primary-btn full-btn" data-i18n="addRecordBtn">
+            Add to records
+          </button>
+        </aside>
       </div>
     </section>
 
