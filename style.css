@@ -177,8 +177,35 @@ h1 {
 .checker-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
+  grid-template-areas:
+    "price result"
+    "costs result"
+    "market result"
+    "record result";
   gap: 22px;
   align-items: start;
+}
+
+.price-card {
+  grid-area: price;
+}
+
+.costs-card {
+  grid-area: costs;
+}
+
+.market-card {
+  grid-area: market;
+}
+
+.record-card {
+  grid-area: record;
+}
+
+.result-card {
+  grid-area: result;
+  position: sticky;
+  top: 82px;
 }
 
 .card {
@@ -198,12 +225,9 @@ h1 {
   border-bottom: 1px solid var(--border);
 }
 
-.form-block:first-child {
-  padding-top: 0;
-}
-
-.form-block:last-of-type {
+.form-block.no-border {
   border-bottom: none;
+  padding: 0;
 }
 
 .form-block h2 {
@@ -286,17 +310,7 @@ textarea:focus {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 12px;
-}
-
-.full-btn {
-  width: 100%;
   margin-top: 16px;
-}
-
-.result-card {
-  position: sticky;
-  top: 82px;
 }
 
 .decision-badge {
@@ -471,7 +485,6 @@ td {
   font-weight: 800;
 }
 
-/* 使用說明區塊 */
 .guide-section {
   padding: 18px 0 36px;
 }
@@ -552,10 +565,15 @@ td {
   font-size: 0.9rem;
 }
 
-/* 平板與手機：主工具改成上下排列 */
 @media (max-width: 1180px) {
   .checker-layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "price"
+      "result"
+      "costs"
+      "market"
+      "record";
     gap: 18px;
   }
 
@@ -579,13 +597,7 @@ td {
   }
 }
 
-/* 手機版：全部字體放大、輸入區更好點 */
 @media (max-width: 768px) {
-  body {
-    font-size: 19px;
-    line-height: 1.65;
-  }
-
   .container {
     width: min(100% - 22px, 1120px);
   }
@@ -596,102 +608,90 @@ td {
 
   .header-inner {
     min-height: auto;
-    padding: 15px 0;
+    padding: 14px 0;
     align-items: flex-start;
     flex-direction: column;
-    gap: 13px;
+    gap: 12px;
   }
 
   .brand {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1.4;
   }
 
   .nav-links {
-    gap: 20px;
-    font-size: 1.1rem;
+    gap: 16px;
+    font-size: 1rem;
   }
 
   .lang-switcher {
     width: 100%;
     justify-content: flex-start;
-    gap: 9px;
+    gap: 8px;
   }
 
   .lang-btn {
-    font-size: 1rem;
-    padding: 8px 13px;
+    font-size: 0.9rem;
+    padding: 7px 12px;
   }
 
   .hero {
-    padding-top: 26px;
+    padding-top: 22px;
   }
 
   .hero-inner {
     max-width: 100%;
   }
 
-  .eyebrow {
-    font-size: 0.95rem;
-  }
-
   h1 {
-    font-size: clamp(2.35rem, 11vw, 3.5rem);
+    font-size: clamp(2rem, 9.5vw, 3rem);
     line-height: 1.1;
   }
 
-  .hero-text {
-    font-size: 1.15rem;
-    line-height: 1.75;
-  }
-
+  .hero-text,
   .quick-hint {
-    font-size: 1.12rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .checker-section {
-    padding-top: 16px;
-  }
-
-  .checker-layout {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    padding-top: 14px;
   }
 
   .form-card,
   .result-card {
     width: 100%;
-    padding: 20px;
-  }
-
-  .result-card {
-    position: static;
+    padding: 18px;
   }
 
   .form-block {
-    padding: 17px 0;
+    padding: 18px 0;
   }
 
   .form-block h2 {
-    font-size: 1.32rem;
+    font-size: 1.45rem;
+    line-height: 1.35;
     margin-bottom: 16px;
+    font-weight: 900;
   }
 
   label {
-    font-size: 1.22rem;
-    margin: 14px 0 8px;
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin: 16px 0 9px;
+    font-weight: 900;
   }
 
   input,
   textarea {
-    font-size: 1.22rem;
-    padding: 15px 13px;
-    min-height: 56px;
+    font-size: 1.28rem;
+    line-height: 1.45;
+    padding: 16px 14px;
+    min-height: 58px;
   }
 
   textarea {
-    min-height: 125px;
+    min-height: 130px;
   }
 
   .more-costs {
@@ -699,73 +699,79 @@ td {
   }
 
   .more-costs summary {
-    font-size: 1.22rem;
+    font-size: 1.35rem;
+    line-height: 1.4;
+    font-weight: 900;
   }
 
-  .decision-badge {
-    font-size: 1.12rem;
-    padding: 9px 14px;
-  }
-
-  .main-result {
-    padding: 20px 22px;
-  }
-
-  .main-result span {
-    font-size: 1.18rem;
-  }
-
-  .main-result strong {
-    font-size: 3.05rem;
-  }
-
-  .result-grid {
-    grid-template-columns: 1fr;
-    gap: 13px;
-  }
-
-  .result-item {
-    padding: 17px;
-  }
-
-  .result-item span {
-    font-size: 1.1rem;
-  }
-
-  .result-item strong {
-    font-size: 1.32rem;
-  }
-
-  .mini-message {
-    padding: 17px;
-  }
-
-  .mini-message strong {
-    font-size: 1.25rem;
-  }
-
-  .mini-message p {
-    font-size: 1.15rem;
-    line-height: 1.75;
+  .button-row {
+    margin-top: 16px;
   }
 
   .btn {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     padding: 15px 18px;
   }
 
+  .decision-badge {
+    font-size: 1rem;
+    padding: 8px 13px;
+  }
+
+  .main-result {
+    padding: 18px 20px;
+  }
+
+  .main-result span {
+    font-size: 1.1rem;
+  }
+
+  .main-result strong {
+    font-size: 2.8rem;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .result-item {
+    padding: 15px;
+  }
+
+  .result-item span {
+    font-size: 1rem;
+  }
+
+  .result-item strong {
+    font-size: 1.2rem;
+  }
+
+  .mini-message {
+    padding: 15px;
+  }
+
+  .mini-message strong {
+    font-size: 1.15rem;
+  }
+
+  .mini-message p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
   .records-section {
-    padding: 44px 0;
+    padding: 40px 0;
   }
 
   .records-header h2 {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 
   .small-note {
-    font-size: 1.12rem;
-    line-height: 1.75;
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .records-actions {
@@ -778,34 +784,34 @@ td {
 
   th,
   td {
-    font-size: 1.05rem;
-    padding: 15px 15px;
+    font-size: 0.95rem;
+    padding: 14px 14px;
   }
 
   .guide-card {
-    padding: 24px;
+    padding: 20px;
   }
 
   .guide-card h2 {
-    font-size: 2.15rem;
+    font-size: 1.65rem;
   }
 
   .guide-grid h3 {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .guide-grid p,
   .guide-grid ol {
-    font-size: 1.18rem;
-    line-height: 1.9;
+    font-size: 0.98rem;
+    line-height: 1.8;
   }
 
   .disclaimer p {
-    font-size: 1.12rem;
-    line-height: 1.75;
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
 
   .footer-inner {
-    font-size: 1.12rem;
+    font-size: 0.95rem;
   }
 }
