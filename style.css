@@ -177,35 +177,8 @@ h1 {
 .checker-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
-  grid-template-areas:
-    "price result"
-    "costs result"
-    "market result"
-    "record result";
   gap: 22px;
   align-items: start;
-}
-
-.price-card {
-  grid-area: price;
-}
-
-.costs-card {
-  grid-area: costs;
-}
-
-.market-card {
-  grid-area: market;
-}
-
-.record-card {
-  grid-area: record;
-}
-
-.result-card {
-  grid-area: result;
-  position: sticky;
-  top: 82px;
 }
 
 .card {
@@ -225,9 +198,12 @@ h1 {
   border-bottom: 1px solid var(--border);
 }
 
-.form-block.no-border {
+.form-block:first-child {
+  padding-top: 0;
+}
+
+.form-block:last-of-type {
   border-bottom: none;
-  padding: 0;
 }
 
 .form-block h2 {
@@ -310,7 +286,17 @@ textarea:focus {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.full-btn {
+  width: 100%;
   margin-top: 16px;
+}
+
+.result-card {
+  position: sticky;
+  top: 82px;
 }
 
 .decision-badge {
@@ -568,12 +554,6 @@ td {
 @media (max-width: 1180px) {
   .checker-layout {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "price"
-      "result"
-      "costs"
-      "market"
-      "record";
     gap: 18px;
   }
 
@@ -615,13 +595,13 @@ td {
   }
 
   .brand {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.4;
   }
 
   .nav-links {
     gap: 16px;
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .lang-switcher {
@@ -631,8 +611,8 @@ td {
   }
 
   .lang-btn {
-    font-size: 0.9rem;
-    padding: 7px 12px;
+    font-size: 0.88rem;
+    padding: 7px 11px;
   }
 
   .hero {
@@ -644,8 +624,8 @@ td {
   }
 
   h1 {
-    font-size: clamp(2rem, 9.5vw, 3rem);
-    line-height: 1.1;
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.08;
   }
 
   .hero-text,
@@ -665,70 +645,70 @@ td {
   }
 
   .form-block {
-    padding: 18px 0;
+    padding: 16px 0;
   }
 
   .form-block h2 {
-    font-size: 1.45rem;
+    font-size: 1.22rem;
     line-height: 1.35;
-    margin-bottom: 16px;
-    font-weight: 900;
+    margin-bottom: 13px;
+    font-weight: 850;
   }
 
   label {
-    font-size: 1.35rem;
+    font-size: 1.16rem;
     line-height: 1.35;
-    margin: 16px 0 9px;
-    font-weight: 900;
+    margin: 13px 0 7px;
+    font-weight: 850;
   }
 
   input,
   textarea {
-    font-size: 1.28rem;
+    font-size: 1.08rem;
     line-height: 1.45;
-    padding: 16px 14px;
-    min-height: 58px;
+    padding: 13px 12px;
+    min-height: 50px;
   }
 
   textarea {
-    min-height: 130px;
+    min-height: 110px;
   }
 
   .more-costs {
-    padding: 16px;
+    padding: 14px;
   }
 
   .more-costs summary {
-    font-size: 1.35rem;
+    font-size: 1.16rem;
     line-height: 1.4;
-    font-weight: 900;
+    font-weight: 850;
   }
 
   .button-row {
-    margin-top: 16px;
+    margin-top: 14px;
   }
 
   .btn {
     width: 100%;
-    font-size: 1.25rem;
-    padding: 15px 18px;
+    font-size: 1.05rem;
+    padding: 13px 16px;
   }
 
   .decision-badge {
-    font-size: 1rem;
-    padding: 8px 13px;
+    font-size: 0.95rem;
+    padding: 8px 12px;
   }
 
   .main-result {
-    padding: 18px 20px;
+    padding: 17px 18px;
   }
 
   .main-result span {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .main-result strong {
-    font-size: 2.8rem;
+    font-size: 2.55rem;
   }
 
   .result-grid {
@@ -737,40 +717,40 @@ td {
   }
 
   .result-item {
-    padding: 15px;
+    padding: 14px;
   }
 
   .result-item span {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .result-item strong {
-    font-size: 1.2rem;
+    font-size: 1.12rem;
   }
 
   .mini-message {
-    padding: 15px;
+    padding: 14px;
   }
 
   .mini-message strong {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
 
   .mini-message p {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     line-height: 1.65;
   }
 
   .records-section {
-    padding: 40px 0;
+    padding: 38px 0;
   }
 
   .records-header h2 {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .small-note {
-    font-size: 1rem;
+    font-size: 0.98rem;
     line-height: 1.65;
   }
 
@@ -784,8 +764,8 @@ td {
 
   th,
   td {
-    font-size: 0.95rem;
-    padding: 14px 14px;
+    font-size: 0.9rem;
+    padding: 13px 14px;
   }
 
   .guide-card {
@@ -793,7 +773,7 @@ td {
   }
 
   .guide-card h2 {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
   }
 
   .guide-grid h3 {
@@ -802,16 +782,16 @@ td {
 
   .guide-grid p,
   .guide-grid ol {
-    font-size: 0.98rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.75;
   }
 
   .disclaimer p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.65;
   }
 
   .footer-inner {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
