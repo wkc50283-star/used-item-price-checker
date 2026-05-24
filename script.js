@@ -926,3 +926,168 @@ document.addEventListener("DOMContentLoaded", () => {
   calculate();
   renderRecords();
 });
+// Copy sold records as readable text for mobile use
+(function () {
+  const copyI18n = {
+    en: {
+      button: "Copy text records",
+      noRecords: "No records to copy.",
+      success: "Text records copied.",
+      record: "Record",
+      date: "Date",
+      item: "Item",
+      qty: "Qty",
+      soldPrice: "Sold price",
+      netPayout: "Net payout",
+      result: "Result",
+      note: "Note"
+    },
+    "zh-TW": {
+      button: "複製文字紀錄",
+      noRecords: "目前沒有可複製的紀錄。",
+      success: "已複製文字紀錄。",
+      record: "紀錄",
+      date: "日期",
+      item: "商品",
+      qty: "數量",
+      soldPrice: "售出價",
+      netPayout: "實際入帳",
+      result: "結果",
+      note: "備註"
+    },
+    "zh-CN": {
+      button: "复制文字记录",
+      noRecords: "目前没有可复制的记录。",
+      success: "已复制文字记录。",
+      record: "记录",
+      date: "日期",
+      item: "商品",
+      qty: "数量",
+      soldPrice: "售出价",
+      netPayout: "实际入账",
+      result: "结果",
+      note: "备注"
+    },
+    ja: {
+      button: "テキスト記録をコピー",
+      noRecords: "コピーできる記録がありません。",
+      success: "テキスト記録をコピーしました。",
+      record: "記録",
+      date: "日付",
+      item: "商品",
+      qty: "数量",
+      soldPrice: "販売価格",
+      netPayout: "実際の受取額",
+      result: "結果",
+      note: "メモ"
+    },
+    ko: {
+      button: "텍스트 기록 복사",
+      noRecords: "복사할 기록이 없습니다.",
+      success: "텍스트 기록이 복사되었습니다.",
+      record: "기록",
+      date: "날짜",
+      item: "상품",
+      qty: "수량",
+      soldPrice: "판매가",
+      netPayout: "실수령액",
+      result: "결과",
+      note: "메모"
+    }
+  };
+
+  function getCurrentLang() {
+    const activeLangBtn = document.querySelector(".lang-btn.active");
+    const lang = activeLangBtn?.dataset?.lang || document.documentElement.lang || "en";
+    return copyI18n[lang] ? lang : "en";
+  }
+
+  function getCopyTextPack() {
+    return copyI18n[getCurrentLang()] || copyI18n.en;
+  }
+
+  function updateCopyButtonText() {
+    const copyTextBtn = document.getElementById("copyTextBtn");
+    if (!copyTextBtn) return;
+
+    const t = getCopyTextPack();
+    copyTextBtn.textContent = t.button;
+  }
+
+  async function copyToClipboard(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    const fallbackBox = document.createElement("textarea");
+    fallbackBox.value = text;
+    fallbackBox.setAttribute("readonly", "");
+    fallbackBox.style.position = "fixed";
+    fallbackBox.style.left = "-9999px";
+    document.body.appendChild(fallbackBox);
+    fallbackBox.select();
+    document.execCommand("copy");
+    document.body.removeChild(fallbackBox);
+  }
+
+  function buildReadableRecordsText() {
+    const t = getCopyTextPack();
+    const rows = Array.from(document.querySelectorAll("#recordsBody tr"));
+
+    if (!rows.length || rows[0].querySelector(".empty-row")) {
+      return "";
+    }
+
+    const textLines = [];
+
+    rows.forEach((row, index) => {
+      const cells = Array.from(row.querySelectorAll("td")).map((cell) =>
+        cell.innerText.trim()
+      );
+
+      if (cells.length < 7) return;
+
+      textLines.push(`${t.record} ${index + 1}`);
+      textLines.push(`${t.date}：${cells[0] || "-"}`);
+      textLines.push(`${t.item}：${cells[1] || "-"}`);
+      textLines.push(`${t.qty}：${cells[2] || "-"}`);
+      textLines.push(`${t.soldPrice}：${cells[3] || "-"}`);
+      textLines.push(`${t.netPayout}：${cells[4] || "-"}`);
+      textLines.push(`${t.result}：${cells[5] || "-"}`);
+      textLines.push(`${t.note}：${cells[6] || "-"}`);
+      textLines.push("");
+    });
+
+    return textLines.join("\n").trim();
+  }
+
+  const copyTextBtn = document.getElementById("copyTextBtn");
+
+  if (copyTextBtn) {
+    updateCopyButtonText();
+
+    copyTextBtn.addEventListener("click", async () => {
+      const t = getCopyTextPack();
+      const readableText = buildReadableRecordsText();
+
+      if (!readableText) {
+        alert(t.noRecords);
+        return;
+      }
+
+      try {
+        await copyToClipboard(readableText);
+        alert(t.success);
+      } catch (error) {
+        alert(t.noRecords);
+      }
+    });
+  }
+
+  document.querySelectorAll(".lang-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      setTimeout(updateCopyButtonText, 0);
+    });
+  });
+})();
