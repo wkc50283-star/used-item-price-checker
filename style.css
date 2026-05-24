@@ -638,7 +638,7 @@ td {
     padding-top: 14px;
   }
 
-    .form-card,
+  .form-card,
   .result-card {
     width: 100%;
     padding: 14px;
@@ -701,62 +701,79 @@ td {
   }
 
   .main-result {
-    padding: 17px 18px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    margin-bottom: 10px;
   }
 
   .main-result span {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .main-result strong {
-    font-size: 2.55rem;
+    font-size: 2.25rem;
   }
 
   .result-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 8px;
   }
 
   .result-item {
-    padding: 14px;
+    padding: 10px 12px;
+    border-radius: 12px;
   }
 
   .result-item span {
-    font-size: 0.95rem;
+    font-size: 0.86rem;
+    margin-bottom: 2px;
   }
 
   .result-item strong {
-    font-size: 1.12rem;
+    font-size: 1rem;
   }
 
   .mini-message {
-    padding: 14px;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 12px;
   }
 
   .mini-message strong {
-    font-size: 1.05rem;
+    font-size: 1rem;
+    margin-bottom: 3px;
   }
 
   .mini-message p {
-    font-size: 0.98rem;
-    line-height: 1.65;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .full-btn {
+    margin-top: 12px;
   }
 
   .records-section {
-    padding: 38px 0;
+    padding: 28px 0;
+  }
+
+  .records-header {
+    margin-bottom: 12px;
   }
 
   .records-header h2 {
-    font-size: 1.85rem;
+    font-size: 1.55rem;
+    line-height: 1.2;
   }
 
   .small-note {
-    font-size: 0.98rem;
-    line-height: 1.65;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .records-actions {
     width: 100%;
+    gap: 8px;
   }
 
   .table-wrap {
@@ -765,8 +782,8 @@ td {
 
   th,
   td {
-    font-size: 0.9rem;
-    padding: 13px 14px;
+    font-size: 0.85rem;
+    padding: 10px 12px;
   }
 
   .guide-card {
