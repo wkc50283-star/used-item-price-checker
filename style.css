@@ -588,35 +588,35 @@ td {
 
   .header-inner {
     min-height: auto;
-    padding: 14px 0;
+    padding: 12px 0;
     align-items: flex-start;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .brand {
-    font-size: 1rem;
-    line-height: 1.4;
+    font-size: 0.98rem;
+    line-height: 1.35;
   }
 
   .nav-links {
-    gap: 16px;
-    font-size: 0.98rem;
+    gap: 14px;
+    font-size: 0.95rem;
   }
 
   .lang-switcher {
     width: 100%;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 7px;
   }
 
   .lang-btn {
-    font-size: 0.88rem;
-    padding: 7px 11px;
+    font-size: 0.84rem;
+    padding: 6px 10px;
   }
 
   .hero {
-    padding-top: 22px;
+    padding-top: 20px;
   }
 
   .hero-inner {
@@ -624,192 +624,226 @@ td {
   }
 
   h1 {
-    font-size: clamp(2rem, 9vw, 2.8rem);
+    font-size: clamp(1.9rem, 8.5vw, 2.65rem);
     line-height: 1.08;
   }
 
   .hero-text,
   .quick-hint {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.96rem;
+    line-height: 1.55;
   }
 
   .checker-section {
-    padding-top: 14px;
+    padding-top: 12px;
+    padding-bottom: 28px;
+  }
+
+  .checker-layout {
+    gap: 14px;
   }
 
   .form-card,
   .result-card {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
   }
 
   .form-block {
-    padding: 10px 0;
+    padding: 8px 0;
   }
 
   .form-block h2 {
-    font-size: 1.18rem;
-    line-height: 1.3;
-    margin-bottom: 10px;
+    font-size: 1.12rem;
+    line-height: 1.28;
+    margin-bottom: 8px;
     font-weight: 850;
   }
 
   label {
-    font-size: 1.08rem;
-    line-height: 1.3;
-    margin: 9px 0 4px;
+    font-size: 1.02rem;
+    line-height: 1.28;
+    margin: 7px 0 3px;
     font-weight: 850;
   }
 
   input,
   textarea {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.35;
-    padding: 9px 11px;
-    min-height: 42px;
+    padding: 7px 10px;
+    min-height: 38px;
   }
 
   textarea {
-    min-height: 82px;
+    min-height: 68px;
   }
 
   .more-costs {
-    padding: 11px;
-    margin-top: 8px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    border-radius: 12px;
   }
 
   .more-costs summary {
-    font-size: 1.08rem;
+    font-size: 1.02rem;
     line-height: 1.35;
     font-weight: 850;
   }
 
   .button-row {
-    margin-top: 10px;
+    margin-top: 8px;
   }
 
   .btn {
     width: 100%;
-    font-size: 1rem;
-    padding: 11px 14px;
+    font-size: 0.98rem;
+    padding: 9px 12px;
   }
 
   .decision-badge {
-    font-size: 0.95rem;
-    padding: 8px 12px;
+    font-size: 0.88rem;
+    padding: 6px 10px;
+    margin-bottom: 9px;
   }
 
   .main-result {
-    padding: 14px 16px;
-    border-radius: 16px;
-    margin-bottom: 10px;
+    padding: 12px 14px;
+    border-radius: 15px;
+    margin-bottom: 8px;
   }
 
   .main-result span {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    margin-bottom: 2px;
   }
 
   .main-result strong {
-    font-size: 2.25rem;
+    font-size: 2.05rem;
   }
 
   .result-grid {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 7px;
   }
 
   .result-item {
-    padding: 10px 12px;
-    border-radius: 12px;
+    padding: 8px 10px;
+    border-radius: 11px;
   }
 
   .result-item span {
-    font-size: 0.86rem;
-    margin-bottom: 2px;
+    font-size: 0.82rem;
+    margin-bottom: 1px;
   }
 
   .result-item strong {
-    font-size: 1rem;
+    font-size: 0.96rem;
   }
 
   .mini-message {
-    margin-top: 8px;
-    padding: 10px 12px;
-    border-radius: 12px;
+    margin-top: 7px;
+    padding: 8px 10px;
+    border-radius: 11px;
   }
 
   .mini-message strong {
-    font-size: 1rem;
-    margin-bottom: 3px;
+    font-size: 0.96rem;
+    margin-bottom: 2px;
   }
 
   .mini-message p {
-    font-size: 0.9rem;
-    line-height: 1.45;
+    font-size: 0.86rem;
+    line-height: 1.42;
   }
 
   .full-btn {
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
   .records-section {
-    padding: 28px 0;
+    padding: 24px 0;
   }
 
   .records-header {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .records-header h2 {
-    font-size: 1.55rem;
-    line-height: 1.2;
+    font-size: 1.45rem;
+    line-height: 1.18;
   }
 
   .small-note {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.86rem;
+    line-height: 1.45;
   }
 
   .records-actions {
     width: 100%;
-    gap: 8px;
+    gap: 7px;
   }
 
   .table-wrap {
-    border-radius: 18px;
+    border-radius: 16px;
   }
 
   th,
   td {
-    font-size: 0.85rem;
-    padding: 10px 12px;
+    font-size: 0.82rem;
+    padding: 9px 10px;
+  }
+
+  .guide-section {
+    padding: 14px 0 28px;
   }
 
   .guide-card {
-    padding: 20px;
+    padding: 16px;
   }
 
   .guide-card h2 {
-    font-size: 1.55rem;
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+  }
+
+  .guide-grid {
+    gap: 16px;
+  }
+
+  .guide-grid > div {
+    gap: 14px;
   }
 
   .guide-grid h3 {
-    font-size: 1rem;
+    font-size: 0.96rem;
+    margin-bottom: 5px;
   }
 
   .guide-grid p,
   .guide-grid ol {
-    font-size: 0.95rem;
-    line-height: 1.75;
-  }
-
-  .disclaimer p {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.65;
   }
 
+  .guide-grid li {
+    margin-bottom: 2px;
+  }
+
+  .disclaimer {
+    padding: 16px 0;
+  }
+
+  .disclaimer p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .site-footer {
+    padding: 18px 0;
+  }
+
   .footer-inner {
-    font-size: 0.9rem;
+    font-size: 0.86rem;
   }
 }
